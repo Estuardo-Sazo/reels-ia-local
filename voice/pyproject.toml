@@ -1,0 +1,61 @@
+[project]
+name = "reels-voz"
+version = "1.0.0"
+description = "Voz clonada y subtítulos locales para reels-ia-local"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=1.26",
+    "sounddevice>=0.5",
+    "huggingface-hub>=0.30",
+]
+
+# Un motor por tipo de computadora. El instalador elige uno con doctor.py:
+#   mlx   Mac con chip Apple (M1, M2, M3, M4…)       uv sync --extra mlx
+#   cuda  Windows o Linux con tarjeta NVIDIA           uv sync --extra cuda
+#   cpu   cualquier otra (Intel/AMD sin NVIDIA, Mac Intel)  uv sync --extra cpu
+[project.optional-dependencies]
+mlx = [
+    "mlx-audio>=0.6.3",
+    "mlx-whisper>=0.4.3",
+    "misaki[en]>=0.9.4",
+]
+cuda = [
+    "torch>=2.6",
+    "torchaudio>=2.6",
+    "qwen-tts>=0.1.1",
+    "openai-whisper>=20250625",
+    "kokoro-onnx>=0.4",
+    "soundfile>=0.12",
+]
+cpu = [
+    "torch>=2.6",
+    "torchaudio>=2.6",
+    "qwen-tts>=0.1.1",
+    "openai-whisper>=20250625",
+    "kokoro-onnx>=0.4",
+    "soundfile>=0.12",
+]
+
+[tool.uv]
+package = false
+conflicts = [[{ extra = "mlx" }, { extra = "cuda" }, { extra = "cpu" }]]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu128", extra = "cuda" },
+    { index = "pytorch-cpu", extra = "cpu", marker = "sys_platform != 'darwin'" },
+]
+torchaudio = [
+    { index = "pytorch-cu128", extra = "cuda" },
+    { index = "pytorch-cpu", extra = "cpu", marker = "sys_platform != 'darwin'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

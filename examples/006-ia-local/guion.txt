@@ -1,0 +1,8 @@
+La voz que estás escuchando no es humana. Y no salió de la nube: salió de esta laptop.
+Es Qwen3-TTS{kuen tres te te ese}, un modelo abierto de mil setecientos millones de parámetros, corriendo en un [M1 Max]{eme uno max}, sin pagar un solo crédito.
+Los subtítulos los saca Whisper{guisper}, también local. Y la animación se renderiza con código, en menos de un minuto.
+¿Por qué importa? Privacidad: tu audio, tu código y tus datos nunca salen de tu máquina.
+Costo: pagas la computadora una vez, no cada petición. Y funciona sin internet.
+Lo que necesitas: memoria unificada o una GPU{ge pe u} con buena VRAM{ve ram}, y herramientas como Ollama{olama}, [LM Studio]{ele eme estudio} o MLX{eme ele equis}.
+La contra: los modelos locales son más pequeños que los de la nube. Para tareas enormes, la nube sigue ganando.
+Sígueme y te enseño a montar tu propio estudio de IA local.

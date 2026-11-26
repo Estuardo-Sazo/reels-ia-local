@@ -1,0 +1,17 @@
+Cada vez que inicias sesión, compras algo en línea o le das me gusta a una foto, hay una base de datos trabajando detrás.
+Hoy vamos a aprender qué es una y cómo funciona por dentro.
+Una base de datos es un sistema que guarda información de forma ordenada, para encontrarla, cambiarla y protegerla.
+Pero, ¿por qué no guardar todo en un archivo de texto o en una hoja de Excel{éxcel}?
+Imagina una tienda con un millón de clientes. Para encontrar a uno en un archivo, habría que leerlo línea por línea.
+Si dos personas compran el último producto al mismo tiempo, el archivo no sabe a quién dárselo.
+Y si se va la luz a mitad de un cambio, el archivo puede quedar a medias, o dañado.
+Una base de datos resuelve esos tres problemas: buscar rápido, atender a muchos al mismo tiempo y no perder datos.
+Por dentro tiene dos partes. Los datos, guardados en archivos en el disco. Y el motor, el programa que los administra.
+Tú nunca tocas esos archivos directamente. Le pides al motor lo que necesitas, y él se encarga.
+Los datos se organizan en tablas, como una hoja de cálculo: cada fila es un registro, y cada columna, un dato de ese registro.
+Por ejemplo, en la tabla de clientes, cada fila es un cliente, y las columnas son su nombre, su correo y su ciudad.
+Para pedirle algo al motor se usa un lenguaje llamado SQL{ese cu ele}, algo así como: dame todos los clientes de Guatemala.
+El motor decide la forma más rápida de encontrarlos y te devuelve el resultado.
+Algunos motores que vas a escuchar mucho son MySQL{maisícuel}, PostgreSQL{póstgres}, SQLite{sícuelait} y [SQL Server]{sícuel server}.
+En el próximo video vamos a abrir el disco, para ver cómo se guardan de verdad tus datos.
+Sígueme para seguir aprendiendo cómo funciona la tecnología por dentro.

@@ -1,0 +1,8 @@
+Alguien está guardando tus datos cifrados hoy, para leerlos dentro de diez años.
+Se llama cosecha ahora, descifra después. Y la llave maestra será una computadora cuántica.
+RSA{erre ese a} y las curvas elípticas protegen casi todo internet, y el algoritmo de Shor{shor} puede romperlos.
+En dos mil diecinueve se estimaban veinte millones de qubits{kiubits} para romper RSA{erre ese a}. En dos mil veinticinco, Google bajó la cifra a menos de un millón.
+Por eso NIST{nist} publicó los primeros estándares post-cuánticos, como ML-KEM{eme ele kem}, y propone retirar RSA{erre ese a} a partir de dos mil treinta.
+Y ya lo estás usando: más de dos tercios del tráfico humano que pasa por Cloudflare{claudfler} usa ML-KEM{eme ele kem} híbrido.
+Si programas: haz un inventario de tu criptografía, actualiza tus librerías, y diseña para cambiar de algoritmo sin reescribir todo.
+Sígueme para estar listo para la tecnología que viene.

@@ -1,0 +1,25 @@
+# Configuración de cada equipo
+reels.config.json
+
+# Voces de referencia (privadas)
+assets/voces/*
+!assets/voces/README.md
+
+# Episodios: se sube el guion y la publicación, no el audio ni los videos
+episodes/*/out/
+episodes/*/tomas/
+studio/assets/ep*/
+!studio/assets/ep006/
+studio/assets/ep006/*
+!studio/assets/ep006/scenes.js
+
+# Herramientas
+studio/.hyperframes/
+studio/node_modules/
+studio/renders/
+voice/.venv/
+voice/test/
+__pycache__/
+*.py[oc]
+.DS_Store
+Thumbs.db

@@ -1,0 +1,8 @@
+Dicen que en dos mil veintisiete ya nadie va a programar. Los datos cuentan otra historia.
+En Google, el setenta y cinco por ciento del código nuevo ya lo genera la IA. Pero ojo: lo aprueban ingenieros.
+Un estudio de METR{meter} encontró algo raro: desarrolladores expertos fueron diecinueve por ciento más lentos con IA, y aun así creían ser más rápidos.
+Y en la encuesta de [Stack Overflow]{stac overflou} de este año, menos del siete por ciento confía en la IA para decisiones importantes.
+Entonces, lo que cambia no es si programas, sino qué haces: menos teclear, más decidir.
+Las habilidades que suben de valor: diseñar sistemas, revisar código ajeno, escribir buenas especificaciones y entender seguridad.
+La IA escribe el código. Tú respondes por él.
+Sígueme para no quedarte atrás en lo que viene.

@@ -1,0 +1,17 @@
+La consulta más peligrosa de SQL{ese cu ele} no tiene nada raro. Solo le falta una palabra.
+En el video anterior aprendimos a leer datos. Hoy vamos a aprender a cambiarlos, con tres palabras nuevas.
+La primera es INSERT{insért}, para agregar filas. Escribes [INSERT INTO]{insért íntu} clientes, y entre paréntesis, los valores de la nueva fila.
+Por ejemplo, el nombre Marta, la ciudad Antigua y la edad veintinueve. El motor la agrega a la tabla como una fila más.
+La segunda es UPDATE{ápdeit}, para modificar filas que ya existen.
+Escribes UPDATE{ápdeit} clientes, SET{set} ciudad igual a Antigua, y luego WHERE{güer}, nombre igual a Ana.
+El WHERE{güer} dice a cuáles filas les cambias el dato. En este caso, solo a Ana.
+Y la tercera es DELETE{dilít}, para borrar. [DELETE FROM]{dilít from} clientes, WHERE{güer}, nombre igual a Pedro, borra solo a Pedro.
+Ahora sí, la consulta más peligrosa. Imagina que escribes el UPDATE{ápdeit}, y se te olvida el WHERE{güer} al final.
+El motor no te pregunta nada. Cambia la ciudad de todos los clientes. Si tienes un millón, cambia el millón.
+Con DELETE{dilít} pasa lo mismo. Sin WHERE{güer}, borra todas las filas de la tabla.
+Y no hay botón de deshacer. Si el cambio ya se confirmó, es permanente.
+Por eso, antes de cambiar o borrar, haz primero un SELECT{seléct} con el mismo WHERE{güer}, y revisa cuántas filas salen.
+Y si puedes, hazlo dentro de una transacción. Si algo sale mal, la deshaces antes de confirmar.
+Así, una palabra olvidada no se convierte en un desastre.
+En el próximo video vamos a juntar dos tablas en una sola consulta. Clientes y compras, juntos.
+Sígueme para seguir aprendiendo cómo funciona la tecnología por dentro.

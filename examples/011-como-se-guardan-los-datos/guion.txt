@@ -1,0 +1,18 @@
+Tu tabla de clientes no se guarda como una hoja de cálculo. En el disco, son bytes{baits} guardados en páginas.
+Hoy vamos a abrir el disco, para ver cómo se guardan de verdad tus datos.
+En el video anterior vimos que el motor guarda los datos en archivos. Pero no los escribe como un texto, línea por línea.
+Divide cada archivo en bloques del mismo tamaño, llamados páginas.
+En PostgreSQL{póstgres}, cada página mide ocho kilobytes{kilobaits}. En MySQL{maisícuel}, dieciséis. Y en SQLite{sícuelait}, cuatro.
+¿Por qué páginas? Porque el disco no lee un dato suelto: siempre lee un bloque completo.
+Si necesitas una sola fila, igual hay que traer la página entera a la memoria.
+Y el disco es mucho más lento que la memoria. Por eso, lo que más importa es cuántas páginas hay que leer.
+Ahora, abramos una página. Al inicio tiene un encabezado, con datos sobre la página misma.
+Después viene una lista pequeña que dice dónde empieza cada fila dentro de la página.
+Las filas se guardan desde el final hacia el centro. Y en medio queda espacio libre para las filas nuevas.
+Y cada fila, al final, son solo bytes{báits}. Un número entero ocupa cuatro, y un texto como Ana guarda cuánto mide y luego sus letras.
+Cuando una página se llena, el motor usa otra. Una tabla grande puede tener millones de páginas.
+Para no ir al disco a cada rato, el motor guarda en memoria las páginas que más usa.
+Y algo curioso: cuando borras una fila, muchas veces no desaparece al instante. Se marca como borrada, y su espacio se reutiliza después.
+Entonces, si tienes un millón de clientes repartidos en miles de páginas, ¿cómo encuentra el motor a uno sin leerlas todas?
+Eso lo vemos en el próximo video: los índices.
+Sígueme para seguir aprendiendo cómo funciona la tecnología por dentro.

@@ -1,0 +1,8 @@
+Una sola actualización apagó ocho millones y medio de computadoras en un solo día.
+Diecinueve de julio de dos mil veinticuatro. Aeropuertos, bancos y hospitales ven la misma pantalla azul.
+El culpable: un archivo de configuración de CrowdStrike, un software de seguridad que corre dentro del kernel de Windows.
+La plantilla definía veintiún campos, pero el código solo le pasaba veinte.
+Al leer el campo veintiuno, accedió a memoria que no existía.
+Y en el kernel no hay red de seguridad: pantalla azul, reinicio, y otra vez.
+La lección: valida tus configuraciones como si fueran código, y despliega por etapas.
+Sígueme para más fallas que cambiaron la tecnología.

@@ -2,6 +2,7 @@
 // a la de la voz más un cierre en pantalla.
 // Uso: node tools/use-episode.mjs ep002 [segundos_de_cierre=1.5]
 import { readFileSync, writeFileSync } from "node:fs";
+import { inject } from "./medios.mjs";
 
 const ep = process.argv[2];
 const tail = Number(process.argv[3] ?? 1.5);
@@ -16,3 +17,5 @@ for (const file of ["index.html", "compositions/youtube.html"]) {
   writeFileSync(file, html);
 }
 console.log(`${ep}: voz ${duration}s, video ${total}s`);
+// Videos y música del episodio (media/medios.json); si no tiene, limpia los del episodio anterior
+if (inject(ep).length) console.log(`${ep}: medios insertados`);

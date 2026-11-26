@@ -9,7 +9,7 @@ El motor (`studio/assets/reel.js`) arma la línea de tiempo GSAP con la voz (`da
 window.EPISODE_TAG = "IA HOY · NNN";        // etiqueta de serie arriba a la izquierda
 window.EPISODE_THEME = "terminal";          // papel | blueprint | editorial | terminal | documental | pizarra | isometrico
 window.EPISODE_KEYWORDS = ["voz", "local"]; // opcional: palabras que el tema resalta en los subtítulos
-window.buildEpisode = function ({ tl, scene, at, S, E, rng, /* ayudas… */ }) {
+window.buildEpisode = function ({ tl, scene, at, S, E, rng, media, clip, /* ayudas… */ }) {
   // ===== 0 · gancho =====
   {
     const s = scene(0, `<div class="term-big">…</div>`);
@@ -28,6 +28,8 @@ window.buildEpisode = function ({ tl, scene, at, S, E, rng, /* ayudas… */ }) {
 | `S(i)`, `E(i)` | Inicio de la frase `i` y fin de su escena (inicio de la siguiente) |
 | `at("palabra", desde)` | Segundo en que la voz dice esa palabra, buscando desde `desde` (usa `S(i)`). Ignora tildes y mayúsculas. Si no la encuentra devuelve `desde` |
 | `rng(semilla)` | Pseudoaleatorio determinista. **Nunca** `Math.random()` |
+| `media("archivo")` | Ruta de `studio/assets/epNNN/media/archivo` válida en 9:16 y 16:9 (para `<img src>`). Ver `medios.md` |
+| `clip("id")` | El `<video>` de un clip de `medios.json` (o `null`), para animar su `opacity`/`scale`. Ver `medios.md` |
 
 Ayudas generales: `pop`, `boil`, `glitch`, `typeText(el, texto, t, cps)` (devuelve cuándo termina), `setBg(color, t)`, `rise`, `reveal`, `draw(pathSVG, t, dur)`, `countUp(el, desde, hasta, t, dur, fmt)`, `slam`, `lines` (`.ln > span`), `strike` (`.strike-bar`), `asciiBar`, `equalizer`.
 

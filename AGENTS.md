@@ -9,6 +9,7 @@ Flujo: `episodes/NNN-tema/guion.txt → voice/tts.py → voice/captions.py → s
 - Instalar, diagnosticar el equipo o arreglar errores de instalación: `.claude/skills/reels-instalar/SKILL.md`
 - Grabar, importar o arreglar la voz clonada: `.claude/skills/reels-voz/SKILL.md`
 - Hacer o editar un video, o sus textos para publicar: `.claude/skills/reels-video/SKILL.md` (y sus `references/`)
+- Usar fotos, clips o música del usuario, o sacar reels de un video que ya grabó: `.claude/skills/reels-video/references/medios.md`
 
 ## Reglas fijas
 
@@ -17,5 +18,5 @@ Flujo: `episodes/NNN-tema/guion.txt → voice/tts.py → voice/captions.py → s
 - Español neutro latinoamericano.
 - El render es determinista: nada de `Math.random()`, `Date.now()` ni `fetch` en las escenas.
 - Revisa los cuadros (`hyperframes snapshot`) y míralos antes de renderizar.
-- No subas voces (`assets/voces/`), audio generado ni videos al repo.
+- No subas voces (`assets/voces/`), audio generado, videos ni lo de `recursos/` al repo.
 - Comandos de Python desde `voice/` con `uv run …`; de video desde `studio/` con `npx --yes hyperframes@0.8.223 …`.

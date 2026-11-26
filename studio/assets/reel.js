@@ -548,7 +548,14 @@ window.buildReel = function (tl) {
   const THEME = window.EPISODE_THEME || "papel";
   const theme = (THEMES[THEME] || THEMES.papel)({ tl, rng, DUR, S, seg, STOP_FPS, bg, grain, tag, stage });
 
-  window.buildEpisode({ tl, scene, at, S, E, rng, boil, glitch, pop, setBg, typeText, rise, reveal, draw, countUp, slam, lines, strike, asciiBar, equalizer, doc: theme.api, pz: theme.api, iso: theme.api });
+  // Recursos del episodio (media/): videos de fondo encima de la decoración del tema, debajo de las escenas
+  const medios = document.getElementById("medios");
+  if (medios) stage.parentNode.insertBefore(medios, stage);
+  const mediaBase = (document.getElementById("voz").getAttribute("src") || "").replace(/voz\.wav$/, "");
+  const media = (name) => mediaBase + "media/" + name; // imagen en assets/epNNN/media/, sirve en 9:16 y 16:9
+  const clip = (id) => document.getElementById("clip-" + id); // <video> que puso tools/medios.mjs
+
+  window.buildEpisode({ tl, scene, at, S, E, rng, media, clip, boil, glitch, pop, setBg, typeText, rise, reveal, draw, countUp, slam, lines, strike, asciiBar, equalizer, doc: theme.api, pz: theme.api, iso: theme.api });
 
   // Palabras clave del episodio: el tema las marca en los subtítulos (clase .kw)
   const KW = new Set((window.EPISODE_KEYWORDS || []).map(norm));

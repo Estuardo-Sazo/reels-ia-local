@@ -1,6 +1,6 @@
 ---
 name: reels-video
-description: Hace un video completo (reel 9:16 + YouTube 16:9) a partir de un tema o un guion, con la voz clonada del usuario, subtítulos palabra por palabra y escenas animadas en HTML, todo local. Úsala cuando pidan "hazme un video / reel / short sobre…", "nuevo episodio", "convierte este guion en video", "renderiza el episodio", "cambia la escena 4", "regenera la frase 3", o los textos para publicar de un episodio.
+description: Hace un video completo (reel 9:16 + YouTube 16:9) a partir de un tema o un guion, con la voz clonada del usuario, subtítulos palabra por palabra y escenas animadas en HTML, todo local. Úsala cuando pidan "hazme un video / reel / short sobre…", "nuevo episodio", "convierte este guion en video", "renderiza el episodio", "cambia la escena 4", "regenera la frase 3", los textos para publicar de un episodio, o cuando traen fotos, clips o música para el video ("usa esta imagen", "mete este clip") o un video que ya grabaron y quieren sacar reels de él ("saca reels de mi video", "córtame este en shorts").
 ---
 
 # Hacer un video
@@ -8,6 +8,8 @@ description: Hace un video completo (reel 9:16 + YouTube 16:9) a partir de un te
 Flujo: `guion.txt → voz clonada (Qwen3-TTS) → tiempos por palabra (Whisper) → escenas HTML (HyperFrames + GSAP) → MP4 9:16 y 16:9`.
 
 Todo corre en la computadora del usuario. Rutas relativas a la raíz del repo.
+
+**¿El usuario ya grabó su video** y quiere reels de él? Ese es otro camino: no se genera voz, se usa su audio. Sigue `references/medios.md` § 3 y vuelve aquí para escenas, revisión y render.
 
 ## 0. Antes de empezar
 
@@ -59,6 +61,7 @@ Elige tema con el usuario (o el que viene usando en su serie) de `references/tem
 2. Lee `references/escenas.md` (contrato de `buildEpisode`, ayudas, medidas del escenario, reglas del render).
 3. Una escena por frase del guion: `scene(i, html)` para `i = 0…n-1`. Sincroniza con lo que dice la voz usando `at("palabra", S(i))`.
 4. Cambia la cabecera: `window.EPISODE_TAG` (serie, p. ej. "IA HOY"), `window.EPISODE_THEME`.
+5. **Recursos del usuario** (fotos, capturas, clips, música en `recursos/`): imágenes con `media("archivo.jpg")`; videos y música en `studio/assets/epNNN/media/medios.json` + `node tools/medios.mjs epNNN`. Lee `references/medios.md` antes. Pregunta si tiene material propio cuando el tema lo pida (un producto, su app, un lugar).
 
 Tema nuevo que no está en la lista: agrégalo en `studio/assets/reel.js` (`THEMES.nombre`) y `reel.css`, siguiendo uno existente; documenta en `references/temas.md`.
 
@@ -89,4 +92,5 @@ Cierra con: ruta de los dos MP4, duración, y dónde están los textos para publ
 - `studio/index.html` y `compositions/youtube.html` son compartidos: un episodio a la vez. Si hay otra sesión trabajando en otro episodio, no corras `use-episode` sin avisar.
 - Si cambia el guion: regenera solo las frases cambiadas (la caché de `lines/` detecta el texto), vuelve a correr `captions.py` y `build-data.mjs`, ajusta escenas, y actualiza `publicacion.md`.
 - Nada de `Math.random()`, `Date.now()` ni `fetch` en escenas: el render debe ser determinista (usa `rng(semilla)`).
-- No subas al repo voces (`assets/voces/*.wav`) ni videos: ya están en `.gitignore`.
+- No subas al repo voces (`assets/voces/*.wav`), videos ni lo de `recursos/`: ya están en `.gitignore`.
+- Material de terceros (TV, otros creadores, música comercial): avisa que las redes pueden silenciarlo o bajarlo.

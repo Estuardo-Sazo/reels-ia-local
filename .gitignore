@@ -13,6 +13,10 @@ studio/assets/ep*/
 studio/assets/ep006/*
 !studio/assets/ep006/scenes.js
 
+# Tus fotos, videos y música (privados y pesados)
+recursos/*
+!recursos/README.md
+
 # Herramientas
 studio/.hyperframes/
 studio/node_modules/

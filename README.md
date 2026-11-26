@@ -88,8 +88,28 @@ Y escribe, por ejemplo:
 - *"La frase 4 suena robótica, regenérala"*
 - *"Cambia la escena 2 para que muestre un diagrama"*
 - *"Escribe los textos para publicar del episodio 003"*
+- *"Usa las fotos de `recursos/` y este clip de mi app en la escena 3"*
+- *"Ya grabé `recursos/clase.mp4`: sácame tres reels de los mejores momentos"*
 
 Claude escribe el guion, te lo muestra, genera la voz, sincroniza subtítulos, diseña las escenas, revisa los cuadros y renderiza los dos videos en `episodes/NNN-tema/out/`.
+
+## Tus fotos, clips y videos
+
+Pon tus archivos en [`recursos/`](recursos/) (no se suben a git) y pídeselos a Claude:
+
+- **Fotos y capturas** dentro de las escenas.
+- **Clips de video** en una ventana del escenario o de fondo a pantalla completa, sincronizados con una palabra de la voz.
+- **Música** de fondo, recortada y con volumen bajo.
+- **Tu propia grabación:** si ya grabaste un video (a cámara, una clase, una partida), Claude lo transcribe, te propone los mejores tramos y saca de ahí los reels con **tu voz real**, subtítulos y animaciones encima. No hace falta clonar la voz para esto.
+
+```bash
+cd voice
+uv run video.py transcribir ../recursos/mi-video.mp4                     # frases con su segundo
+uv run video.py extraer ../recursos/mi-video.mp4 ../studio/assets/ep010 --de 95 --a 150
+cd ../studio && node tools/build-data.mjs assets/ep010 && node tools/medios.mjs ep010
+```
+
+Detalles en [`references/medios.md`](.claude/skills/reels-video/references/medios.md).
 
 ## Skills incluidas
 
@@ -134,13 +154,16 @@ voice/                       Python: voz, subtítulos, grabación, diagnóstico
   tts.py · captions.py       guion → voz.wav + segments.json → captions.json
   grabar.py · probar.py      tu voz de referencia
   tomas.py                   varias tomas de una frase para elegir de oído
+  video.py                   reels desde tu propia grabación (transcribir / extraer)
 studio/                      HyperFrames: composición 9:16 (index.html) y 16:9 (compositions/youtube.html)
   assets/reel.js · reel.css  motor de escenas, temas y subtítulos
   assets/epNNN/              audio, tiempos y scenes.js de cada episodio
-  tools/                     build-data, use-episode, render
+  tools/                     build-data, use-episode, medios, render
+  assets/epNNN/media/        fotos y clips del episodio (medios.json)
 episodes/NNN-tema/           guion.txt, publicacion.md y out/ con los MP4
 examples/                    un episodio de ejemplo por tema
 assets/voces/                tu voz de referencia (nunca se sube a git)
+recursos/                    tus fotos, videos y música (nunca se suben a git)
 ```
 
 ## Créditos y licencias

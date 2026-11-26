@@ -38,7 +38,7 @@ Para saberlo exacto antes de instalar nada, el instalador corre un diagnóstico 
 Necesitas [Claude Code](https://claude.com/claude-code) (o cualquier agente que lea skills / `AGENTS.md`).
 
 ```bash
-git clone https://github.com/<tu-usuario>/reels-ia-local.git
+git clone https://github.com/Estuardo-Sazo/reels-ia-local.git
 cd reels-ia-local
 ```
 

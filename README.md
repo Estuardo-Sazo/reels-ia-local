@@ -2,6 +2,12 @@
 
 **Pídele a Claude un video y te lo entrega listo para publicar: con tu voz clonada, subtítulos palabra por palabra y animaciones. Todo corre en tu computadora: sin pagar créditos, sin subir tu voz a la nube.**
 
+<p align="center">
+  <img src="docs/demo.gif" width="300" alt="Reel de ejemplo hecho con reels-ia-local: tema terminal, voz clonada y subtítulos palabra por palabra">
+  <br>
+  <sub>Reel de ejemplo (<a href="examples/006-ia-local">examples/006-ia-local</a>): voz clonada, subtítulos y animación, generados en una MacBook.</sub>
+</p>
+
 ```
 "Hazme un reel sobre qué es una API, con tema pizarra"
         │
